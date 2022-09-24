@@ -11,6 +11,16 @@ export const FormContainer = styled.div`
   font-weight: bold;
   flex-wrap: wrap;
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   @media (max-width: 768px) {
     margin-top: 2.5rem;
   }
@@ -25,6 +35,7 @@ const BaseInput = styled.input`
   font-size: 1.125rem;
   padding: 0 0.5rem;
   color: ${(props) => props.theme['gray-100']};
+  text-align: center;
 
   &:focus {
     box-shadow: none;

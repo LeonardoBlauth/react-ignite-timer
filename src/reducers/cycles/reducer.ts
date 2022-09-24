@@ -51,7 +51,6 @@ export function cyclesReducer(state: CyclesState, action: any) {
         draft.activeCycleId = null
       })
     }
-
     case ActionTypes.RESET_ACTIVE_CYCLE_TO_NULL:
       return produce(state, (draft) => {
         draft.activeCycleId = null
