@@ -10,7 +10,9 @@ export function History() {
   const { cycles } = useContext(CyclesContext)
 
   function FormatDate(date: Date) {
-    return formatDistanceToNow(date, {
+    const newDate = new Date(date)
+
+    return formatDistanceToNow(newDate, {
       addSuffix: true,
       locale: ptBr,
     })
