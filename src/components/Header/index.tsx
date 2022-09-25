@@ -4,6 +4,7 @@ import { Timer, Scroll } from 'phosphor-react'
 import { HeaderContainer } from './styles'
 
 import logoIgnite from '../../assets/logo-ignite.svg'
+import { Tooltip } from '../Tooltip'
 
 export function Header() {
   return (
@@ -11,12 +12,17 @@ export function Header() {
       <img src={logoIgnite} alt="" />
 
       <nav>
-        <NavLink to="/" title="Timer">
-          <Timer size={24} />
-        </NavLink>
-        <NavLink to="/history" title="Histórico">
-          <Scroll size={24} />
-        </NavLink>
+        <Tooltip content="Timer">
+          <NavLink to="/">
+            <Timer size={24} />
+          </NavLink>
+        </Tooltip>
+
+        <Tooltip content="Histórico">
+          <NavLink to="/history">
+            <Scroll size={24} />
+          </NavLink>
+        </Tooltip>
       </nav>
     </HeaderContainer>
   )

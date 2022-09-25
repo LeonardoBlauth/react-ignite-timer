@@ -10,6 +10,11 @@ export const HeaderContainer = styled.header`
     gap: 0.5rem;
   }
 
+  button {
+    background: transparent;
+    border: 0;
+  }
+
   a {
     width: 3rem;
     height: 3rem;
