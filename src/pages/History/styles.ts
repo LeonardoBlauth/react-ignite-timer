@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HistoryContainer = styled.main`
   flex: 1;
   padding: 3.5rem;
+  height: 95%;
 
   display: flex;
   flex-direction: column;
@@ -10,6 +11,10 @@ export const HistoryContainer = styled.main`
   h1 {
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
+  }
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 1rem;
   }
 `
 
@@ -83,4 +88,18 @@ export const Status = styled.span<StatusProps>`
     border-radius: 50%;
     background: ${(props) => props.theme[STATUS_COLORS[props.variant]]};
   }
+`
+
+export const NoData = styled.div`
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  font-size: 1.25rem;
+  text-align: center;
 `
