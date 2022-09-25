@@ -1,13 +1,30 @@
-import { useContext } from 'react'
-import { useFormContext } from 'react-hook-form'
+import { Minus, Plus } from 'phosphor-react'
+import { ReactNode, useContext } from 'react'
+import { FieldError, useFormContext } from 'react-hook-form'
+import { Tooltip } from '../../../../components/Tooltip'
 
 import { CyclesContext } from '../../../../contexts/CyclesContext'
 
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
+interface NewCycleFormProps {
+  decrementMinutesAmount: () => void
+  incrementMinutesAmount: () => void
+}
 
-export function NewCycleForm() {
+export function NewCycleForm({
+  decrementMinutesAmount,
+  incrementMinutesAmount,
+}: NewCycleFormProps) {
   const { activeCycle } = useContext(CyclesContext)
   const { register } = useFormContext()
+
+  function handleDecrementMinutesAmount() {
+    decrementMinutesAmount()
+  }
+
+  function handleIncrementMinutesAmount() {
+    incrementMinutesAmount()
+  }
 
   return (
     <FormContainer>
@@ -15,7 +32,7 @@ export function NewCycleForm() {
       <TaskInput
         id="task"
         list="task-suggestions"
-        placeholder="Dê um nome para o seu projeto"
+        placeholder="Dê um nome ao seu projeto"
         disabled={!!activeCycle}
         {...register('task')}
       />
@@ -24,20 +41,32 @@ export function NewCycleForm() {
         <option value="Projeto 1" />
         <option value="Projeto 2" />
         <option value="Projeto 3" />
-        <option value="Banana" />
       </datalist>
 
-      <label htmlFor="minutesAmount">durante</label>
-      <MinutesAmountInput
-        id="minutesAmount"
-        type="number"
-        placeholder="00"
-        step={5}
-        min={5}
-        max={60}
-        disabled={!!activeCycle}
-        {...register('minutesAmount', { valueAsNumber: true })}
-      />
+      <label htmlFor="minutesAmount">Durante</label>
+      <div>
+        <button
+          type="button"
+          disabled={!!activeCycle}
+          onMouseDown={handleDecrementMinutesAmount}
+        >
+          <Minus size={15} />
+        </button>
+        <MinutesAmountInput
+          id="minutesAmount"
+          type="number"
+          placeholder="00"
+          disabled={!!activeCycle}
+          {...register('minutesAmount', { valueAsNumber: true })}
+        />
+        <button
+          type="button"
+          disabled={!!activeCycle}
+          onMouseDown={handleIncrementMinutesAmount}
+        >
+          <Plus size={15} />
+        </button>
+      </div>
       <span>minutos.</span>
     </FormContainer>
   )

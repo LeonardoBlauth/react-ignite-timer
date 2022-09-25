@@ -11,6 +11,30 @@ export const FormContainer = styled.div`
   font-weight: bold;
   flex-wrap: wrap;
 
+  div {
+    border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+    margin: 0 0.25rem;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+
+    width: 1rem;
+    height: 1rem;
+    color: ${(props) => props.theme['gray-500']};
+
+    cursor: pointer;
+
+    &:hover {
+      color: ${(props) => props.theme['green-500']};
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -30,15 +54,11 @@ const BaseInput = styled.input`
   background: transparent;
   height: 2.5rem;
   border: 0;
-  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
   font-weight: bold;
   font-size: 1.125rem;
-  padding: 0 0.5rem;
   color: ${(props) => props.theme['gray-100']};
-  text-align: center;
 
   &:focus {
-    box-shadow: none;
     border-color: ${(props) => props.theme['green-500']};
   }
 
@@ -53,6 +73,8 @@ const BaseInput = styled.input`
 
 export const TaskInput = styled(BaseInput)`
   flex: 1;
+  padding: 0 0.5rem;
+  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
 
   &::-webkit-calendar-picker-indicator {
     display: none !important;
@@ -60,5 +82,7 @@ export const TaskInput = styled(BaseInput)`
 `
 
 export const MinutesAmountInput = styled(BaseInput)`
-  width: 4rem;
+  width: 1.5rem;
+  margin: 0 0.25rem;
+  text-align: center;
 `
