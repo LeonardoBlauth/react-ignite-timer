@@ -35,10 +35,10 @@ To improve the application I added Radix Tooltip in navigation and use it to sho
 ## :camera: Screenshots
 
 <h1 align="center">
-  <img src="https://imgur.com/oeOLnTl.png" alt="Ignite Timer - Interface" style="height: 50%; width: 50%;" />
-  <img src="https://imgur.com/RJuO9fD.png" alt="Ignite Timer - Interface With Time" style="height: 50%; width: 50%;" />
-  <img src="https://imgur.com/gqFDrqK.png" alt="Ignite Timer - History Interface" style="height: 50%; width: 50%;" />
-  <img src="https://imgur.com/IwRRJCu.png" alt="Ignite Timer - History Interface Without Data" style="height: 50%; width: 50%;" />
+  <img src="https://imgur.com/oeOLnTl.png" alt="Ignite Timer - Interface" style="height: 70%; width: 70%;" />
+  <img src="https://imgur.com/RJuO9fD.png" alt="Ignite Timer - Interface With Time" style="height: 70%; width: 70%;" />
+  <img src="https://imgur.com/gqFDrqK.png" alt="Ignite Timer - History Interface" style="height: 70%; width: 70%;" />
+  <img src="https://imgur.com/IwRRJCu.png" alt="Ignite Timer - History Interface Without Data" style="height: 70%; width: 70%;" />
 </h1>
 
 <br />
