@@ -64,6 +64,12 @@ export const HistoryList = styled.div`
       }
     }
   }
+
+  @media (max-width: 909px) {
+    table {
+      display: none;
+    }
+  }
 `
 
 const STATUS_COLORS = {
@@ -87,6 +93,53 @@ export const Status = styled.span<StatusProps>`
     height: 0.5rem;
     border-radius: 50%;
     background: ${(props) => props.theme[STATUS_COLORS[props.variant]]};
+  }
+`
+
+export const Card = styled.div`
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  background: ${(props) => props.theme['gray-700']};
+  color: ${(props) => props.theme['gray-100']};
+
+  header {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+    }
+
+    small {
+      margin-top: 0.25rem;
+      color: ${(props) => props.theme['gray-300']};
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 1.5rem;
+  }
+
+  & + div {
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 910px) {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    div {
+      justify-content: flex-end;
+      small {
+        display: none;
+      }
+    }
   }
 `
 

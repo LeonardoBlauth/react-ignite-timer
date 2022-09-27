@@ -67,7 +67,7 @@ export function NewCycleForm({
           <Plus size={15} />
         </button>
       </div>
-      <span>minutos.</span>
+      <span>minuto(s).</span>
     </FormContainer>
   )
 }
