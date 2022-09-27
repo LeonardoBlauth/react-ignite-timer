@@ -1,14 +1,13 @@
-import { useContext } from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
-import { CyclesContext } from '../../contexts/CyclesContext'
+import { useCycles } from '../../hooks/useCycles'
 
 import { Card, HistoryContainer, HistoryList, NoData, Status } from './styles'
 import { Scroll } from 'phosphor-react'
 
 export function History() {
-  const { cycles } = useContext(CyclesContext)
+  const { cycles } = useCycles()
 
   function FormatDate(date: Date) {
     const newDate = new Date(date)

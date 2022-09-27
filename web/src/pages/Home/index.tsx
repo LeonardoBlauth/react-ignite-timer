@@ -1,14 +1,13 @@
-import { useContext } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import { HandPalm, Play } from 'phosphor-react'
 
+import { useCycles } from '../../hooks/useCycles'
 import { NewCycleForm } from './components/NewCycleForm'
 import { Countdown } from './components/Countdown'
 
 import { HomeContainer } from './styles'
-import { CyclesContext } from '../../contexts/CyclesContext'
 import { Tooltip } from '../../components/Tooltip'
 
 const newCycleFormValidationSchema = zod.object({
@@ -22,8 +21,7 @@ const newCycleFormValidationSchema = zod.object({
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
 export function Home() {
-  const { activeCycle, createNewCycle, interruptCurrentCycle } =
-    useContext(CyclesContext)
+  const { activeCycle, createNewCycle, interruptCurrentCycle } = useCycles()
   const newCycleForm = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {

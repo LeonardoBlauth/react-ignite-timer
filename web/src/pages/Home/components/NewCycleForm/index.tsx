@@ -1,9 +1,7 @@
 import { Minus, Plus } from 'phosphor-react'
-import { ReactNode, useContext } from 'react'
-import { FieldError, useFormContext } from 'react-hook-form'
-import { Tooltip } from '../../../../components/Tooltip'
+import { useFormContext } from 'react-hook-form'
 
-import { CyclesContext } from '../../../../contexts/CyclesContext'
+import { useCycles } from '../../../../hooks/useCycles'
 
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 interface NewCycleFormProps {
@@ -15,7 +13,7 @@ export function NewCycleForm({
   decrementMinutesAmount,
   incrementMinutesAmount,
 }: NewCycleFormProps) {
-  const { activeCycle } = useContext(CyclesContext)
+  const { activeCycle } = useCycles()
   const { register } = useFormContext()
 
   function handleDecrementMinutesAmount() {
