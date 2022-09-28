@@ -23,7 +23,3 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 `
-
-export function test() {
-  return 'testando'
-}
